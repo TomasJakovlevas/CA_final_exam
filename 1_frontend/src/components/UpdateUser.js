@@ -14,7 +14,7 @@ const UpdateUser = () => {
   const [newEmail, setNewEmail] = useState('');
   const [newPassword, setNewPassword] = useState('');
   const [userId, setUserId] = useState('');
-  const [select, setSelect] = useState('Select Here');
+  const [select, setSelect] = useState('Pasirinkit');
   const [success, setSuccess] = useState('');
 
   // --- global
@@ -38,8 +38,8 @@ const UpdateUser = () => {
         setNewAge(0);
         setNewEmail('');
         setNewPassword('');
-        setSelect('Select Here');
-        setSuccess('User updated!');
+        setSelect('Pasirinkit');
+        setSuccess('Vartotojas atnaujintas!');
         setTimeout(() => {
           setSuccess('');
         }, 3000);
@@ -64,7 +64,7 @@ const UpdateUser = () => {
 
   return (
     <section id='updateUser'>
-      <h4>UPDATE USER</h4>
+      <h4>ATNAUJINTI VARTOTOJO DUOMENIS</h4>
       <form id='updateUserForm' onSubmit={updateUser}>
         <select id='selectUser' onChange={changeUser}>
           <option defaultValue={select} hidden>
@@ -78,7 +78,7 @@ const UpdateUser = () => {
         </select>
 
         <div className='formDiv'>
-          <label htmlFor='userName'>Name</label>
+          <label htmlFor='userName'>Vardas</label>
           <input
             type='text'
             value={newName}
@@ -88,7 +88,7 @@ const UpdateUser = () => {
         </div>
 
         <div className='formDiv'>
-          <label htmlFor='userAge'>Age</label>
+          <label htmlFor='userAge'>Amžius</label>
           <input
             type='number'
             value={newAge}
@@ -98,7 +98,7 @@ const UpdateUser = () => {
         </div>
 
         <div className='formDiv'>
-          <label htmlFor='userEmail'>Email</label>
+          <label htmlFor='userEmail'>El. paštas</label>
           <input
             type='email'
             value={newEmail}
@@ -108,7 +108,7 @@ const UpdateUser = () => {
         </div>
 
         <div className='formDiv'>
-          <label htmlFor='userPassword'>Password</label>
+          <label htmlFor='userPassword'>Slaptažodis</label>
           <input
             type='password'
             value={newPassword}
@@ -117,7 +117,7 @@ const UpdateUser = () => {
           />
         </div>
 
-        <input type='submit' value='UPDATE USER' />
+        <input type='submit' value='ATNAUJINTI' />
         <p id='successMessage'>{success}</p>
       </form>
     </section>

@@ -29,7 +29,7 @@ const CreateUser = () => {
     if (password !== passwordConfirm) {
       setPassword('');
       setPasswordConfirm('');
-      setError('Passwords do not match');
+      setError('Slaptažodžiai turi sutapti');
       setTimeout(() => {
         setError('');
       }, 3000);
@@ -47,7 +47,7 @@ const CreateUser = () => {
       .post('http://localhost:5000/api/users/signup/', user)
       .then((response) => {
         if (response.data.status === 'Error') {
-          setError(response.data.message);
+          setError('El. paštas jau užimtas');
 
           setTimeout(() => {
             setError('');
@@ -57,7 +57,7 @@ const CreateUser = () => {
           setPassword('');
           setPasswordConfirm('');
         } else if (response.data.status === 'Success') {
-          setSuccess('User added successfully');
+          setSuccess('Vartotojas Sukurtas!');
           setTimeout(() => {
             setSuccess('');
           }, 3000);
@@ -79,10 +79,10 @@ const CreateUser = () => {
   return (
     <section id='createUser'>
       <h1>ADMIN</h1>
-      <h3>Create New User</h3>
+      <h3>Sukurti vartotoją</h3>
       <form id='createUserForm' onSubmit={createUser}>
         <div className='inputDiv'>
-          <label htmlFor='userName'>Name</label>
+          <label htmlFor='userName'>Vardas</label>
           <input
             type='text'
             value={name}
@@ -92,7 +92,7 @@ const CreateUser = () => {
         </div>
 
         <div className='inputDiv'>
-          <label htmlFor='userAge'>Age</label>
+          <label htmlFor='userAge'>Amžius</label>
           <input
             type='number'
             value={age}
@@ -102,7 +102,7 @@ const CreateUser = () => {
         </div>
 
         <div className='inputDiv'>
-          <label htmlFor='userEmail'>Email</label>
+          <label htmlFor='userEmail'>El. paštas</label>
           <input
             type='email'
             value={email}
@@ -112,7 +112,7 @@ const CreateUser = () => {
         </div>
 
         <div className='inputDiv'>
-          <label htmlFor='userPassword'>Password</label>
+          <label htmlFor='userPassword'>Slaptažodis</label>
           <input
             type='password'
             value={password}
@@ -122,7 +122,7 @@ const CreateUser = () => {
         </div>
 
         <div className='inputDiv'>
-          <label htmlFor='userPasswordConfirm'>Confirm Password</label>
+          <label htmlFor='userPasswordConfirm'>Pakartokite slaptažodį</label>
           <input
             type='password'
             value={passwordConfirm}
@@ -131,7 +131,7 @@ const CreateUser = () => {
           />
         </div>
 
-        <input type='submit' value='CREATE USER' />
+        <input type='submit' value='SUKURTI VARTOTOJĄ' />
       </form>
       <p className='errorMessage'>{error}</p>
       <p className='successMessage'>{success}</p>

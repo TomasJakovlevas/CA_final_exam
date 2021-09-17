@@ -42,7 +42,7 @@ const Users = () => {
             <span>{item.age}</span>
             <p>{item.email}</p>
             <p>{item.password}</p>
-            <Button text='DELETE' action={() => handleDelete(item._id)} />
+            <Button text='IŠTRINTI' action={() => handleDelete(item._id)} />
           </div>
         ))
       ) : (
