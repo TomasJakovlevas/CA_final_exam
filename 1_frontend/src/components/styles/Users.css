@@ -1,0 +1,22 @@
+#users {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.userCard {
+  padding: 30px;
+  width: 20%;
+  margin: 20px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  background-color: rgba(240, 240, 240, 0.3);
+}
+
+#errorMessage {
+  background-color: red;
+  margin: 10px 0;
+  color: white;
+  text-align: center;
+  width: 80%;
+}
